@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-30 07:54+0200\n"
+"POT-Creation-Date: 2020-05-01 16:01+0200\n"
 "PO-Revision-Date: 2020-04-30 07:55+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: sr\n"
@@ -244,17 +244,17 @@ msgstr "%(count)d pratilaca"
 #: app/templates/user.html:13
 #, python-format
 msgid "%(count)d following"
-msgstr ""
+msgstr "%(count)d praceno"
 
 #: app/templates/user.html:15
 msgid "Edit your profile"
-msgstr ""
+msgstr "Uredi svoj profil"
 
 #: app/templates/user.html:17
 msgid "Follow"
-msgstr ""
+msgstr "Zaprati"
 
 #: app/templates/user.html:19
 msgid "Unfollow"
-msgstr ""
+msgstr "Odprati"
 
