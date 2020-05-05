@@ -11,20 +11,23 @@ from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 from config import Config
 
-app = Flask(__name__)
-app.config.from_object(Config)
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-login = LoginManager(app)
-login.login_view = 'login'
+db = SQLAlchemy()
+migrate = Migrate()
+login = LoginManager()
+login.login_view = 'auth.login'
 login.login_message = _l('Please log in to access this page.')
-mail = Mail(app)
-bootstrap = Bootstrap(app)
-moment = Moment(app)
-babel = Babel(app)
+mail = Mail()
+bootstrap = Bootstrap()
+moment = Moment()
+babel = Babel()
 
-from app.errors import bp as errors_bp
-app.register_blueprint(errors_bp)
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(config_class)
+
+
+
+
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
