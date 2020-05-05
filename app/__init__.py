@@ -1,7 +1,7 @@
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
-from flask import Flask, request
+from flask import Flask, request, current_app
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
@@ -22,6 +22,9 @@ mail = Mail(app)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 babel = Babel(app)
+
+from app.errors import bp as errors_bp
+app.register_blueprint(errors_bp)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
@@ -57,4 +60,4 @@ def get_locale():
 #    return request.accept_languages.best_match(app.config['LANGUAGES'])
     return 'sr'
 
-from app import routes, models, errors
+from app import routes, models
